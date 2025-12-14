@@ -34,7 +34,7 @@ const AIModal: React.FC<AIModalProps> = ({ type, onClose, onBookAppointment }) =
   useEffect(() => {
     // Initial greeting
     if (type === 'chat') {
-      setMessages([{ id: 'init', role: 'model', text: 'Hello Sarah! I am your health assistant. How can I help you today?', timestamp: new Date() }]);
+      setMessages([{ id: 'init', role: 'model', text: 'Hello Chinmay! I am your health assistant. How can I help you today?', timestamp: new Date() }]);
     } else if (type === 'triage') {
       setMessages([{ id: 'init', role: 'model', text: 'Hello. I am here to help assess your symptoms. Please describe what you are feeling. You can use the controls below to indicate pain level and duration to help me understand better.', timestamp: new Date() }]);
     } else if (type === 'report') {

@@ -9,8 +9,8 @@ const Settings: React.FC = () => {
   });
 
   const [profile, setProfile] = useState({
-    name: 'Sarah Jenkins',
-    email: 'sarah.j@example.com',
+    name: 'Chinmay',
+    email: 'chinmay@example.com',
     phone: '+1 (555) 000-0000',
     dob: '1988-05-14'
   });

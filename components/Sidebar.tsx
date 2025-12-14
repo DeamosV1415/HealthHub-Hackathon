@@ -66,7 +66,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab }) => {
             className="w-10 h-10 rounded-full border-2 border-emerald-500/30"
           />
           <div className="flex-1 overflow-hidden">
-            <h4 className="text-sm font-medium text-white truncate">Sarah Jenkins</h4>
+            <h4 className="text-sm font-medium text-white truncate">Chinmay</h4>
             <p className="text-xs text-emerald-500">Premium Plan</p>
           </div>
         </div>

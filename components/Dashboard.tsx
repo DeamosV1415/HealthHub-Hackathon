@@ -21,7 +21,7 @@ const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
 
   const recentActivity = [
     { id: 1, title: 'Blood Test Results', subtitle: 'Uploaded Yesterday', icon: FileText, color: 'text-blue-400 bg-blue-500/10' },
-    { id: 2, title: 'Dr. Wong replied', subtitle: '2 days ago', icon: MessageSquare, color: 'text-purple-400 bg-purple-500/10' },
+    { id: 2, title: 'Dr. Kavya replied', subtitle: '2 days ago', icon: MessageSquare, color: 'text-purple-400 bg-purple-500/10' },
     { id: 3, title: 'Prescription Renewed', subtitle: 'Oct 24, 2023', icon: Activity, color: 'text-emerald-400 bg-emerald-500/10' },
   ];
 
@@ -30,7 +30,7 @@ const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
       {/* Header */}
       <header className="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4">
         <div>
-          <h2 className="text-3xl font-bold text-white mb-1">Good Morning, Sarah</h2>
+          <h2 className="text-3xl font-bold text-white mb-1">Good Morning, Chinmay</h2>
           <p className="text-health-muted">Here is your daily health summary</p>
         </div>
         <div className="flex items-center gap-3">
@@ -74,7 +74,7 @@ const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
                     <MoreVertical className="w-5 h-5 text-gray-400 cursor-pointer" />
                 </div>
                 
-                <h3 className="text-lg font-bold text-white">Dr. Emily Smith</h3>
+                <h3 className="text-lg font-bold text-white">Dr. Anadhya</h3>
                 <p className="text-health-muted text-xs mb-4">General Checkup • 10:00 AM</p>
 
                 <div className="mt-auto flex gap-3">

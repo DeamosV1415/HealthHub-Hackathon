@@ -14,11 +14,11 @@ interface Doctor {
 }
 
 const doctors: Doctor[] = [
-  { id: 1, name: 'Dr. Emily Smith', specialty: 'General Practitioner', rating: 4.9, reviews: 124, image: 'https://picsum.photos/id/1062/200/200', nextAvailable: 'Today', location: 'HealthHub Central', price: '$150' },
-  { id: 2, name: 'Dr. Michael Chen', specialty: 'Cardiologist', rating: 4.8, reviews: 89, image: 'https://picsum.photos/id/1025/200/200', nextAvailable: 'Tomorrow', location: 'Heart Center', price: '$200' },
-  { id: 3, name: 'Dr. Sarah Wong', specialty: 'Dermatologist', rating: 4.9, reviews: 210, image: 'https://picsum.photos/id/338/200/200', nextAvailable: 'Thu, Oct 26', location: 'Skin Clinic', price: '$180' },
-  { id: 4, name: 'Dr. James Wilson', specialty: 'Orthopedist', rating: 4.7, reviews: 76, image: 'https://picsum.photos/id/1074/200/200', nextAvailable: 'Fri, Oct 27', location: 'Bone & Joint', price: '$220' },
-  { id: 5, name: 'Dr. Lisa Ray', specialty: 'Neurologist', rating: 5.0, reviews: 150, image: 'https://picsum.photos/id/64/200/200', nextAvailable: 'Mon, Oct 30', location: 'Neuro Institute', price: '$250' },
+  { id: 1, name: 'Dr. Anadhya', specialty: 'General Practitioner', rating: 4.9, reviews: 124, image: 'https://picsum.photos/id/1062/200/200', nextAvailable: 'Today', location: 'HealthHub Central', price: '$150' },
+  { id: 2, name: 'Dr. Harsh', specialty: 'Cardiologist', rating: 4.8, reviews: 89, image: 'https://picsum.photos/id/1025/200/200', nextAvailable: 'Tomorrow', location: 'Heart Center', price: '$200' },
+  { id: 3, name: 'Dr. Kavya', specialty: 'Dermatologist', rating: 4.9, reviews: 210, image: 'https://picsum.photos/id/338/200/200', nextAvailable: 'Thu, Oct 26', location: 'Skin Clinic', price: '$180' },
+  { id: 4, name: 'Dr. Harsh', specialty: 'Orthopedist', rating: 4.7, reviews: 76, image: 'https://picsum.photos/id/1074/200/200', nextAvailable: 'Fri, Oct 27', location: 'Bone & Joint', price: '$220' },
+  { id: 5, name: 'Dr. Kavya', specialty: 'Neurologist', rating: 5.0, reviews: 150, image: 'https://picsum.photos/id/64/200/200', nextAvailable: 'Mon, Oct 30', location: 'Neuro Institute', price: '$250' },
 ];
 
 const timeSlots = ['09:00 AM', '09:30 AM', '10:00 AM', '11:00 AM', '01:00 PM', '02:30 PM', '03:00 PM', '04:15 PM'];
@@ -205,7 +205,7 @@ const Appointments: React.FC = () => {
                             </div>
                             <div className="flex items-center gap-2 mb-3">
                                 <img src="https://picsum.photos/id/1062/50/50" className="w-6 h-6 rounded-full" alt="Doctor" />
-                                <span className="text-xs text-gray-300">Dr. Emily Smith</span>
+                                <span className="text-xs text-gray-300">Dr. Anadhya</span>
                             </div>
                             <div className="flex gap-2">
                                 <button className="flex-1 bg-emerald-500 text-health-bg text-xs font-bold py-2 rounded-lg hover:bg-emerald-400 transition-colors">Join</button>

@@ -6,11 +6,11 @@ const Reports: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
 
   const documents = [
-    { id: 1, title: 'Complete Blood Count (CBC)', date: 'Oct 24, 2023', type: 'Lab Result', format: 'PDF', status: 'Normal', doctor: 'Dr. Sarah Wong' },
-    { id: 2, title: 'Chest X-Ray Anteroposterior', date: 'Sep 12, 2023', type: 'Imaging', format: 'DICOM', status: 'Attention', doctor: 'Dr. James Wilson' },
-    { id: 3, title: 'Annual Physical Summary', date: 'Jan 15, 2023', type: 'General', format: 'PDF', status: 'Normal', doctor: 'Dr. Emily Smith' },
-    { id: 4, title: 'Lipid Panel', date: 'Dec 05, 2022', type: 'Lab Result', format: 'PDF', status: 'High', doctor: 'Dr. Sarah Wong' },
-    { id: 5, title: 'Dermatology Consultation', date: 'Nov 18, 2022', type: 'Consultation', format: 'PDF', status: 'Normal', doctor: 'Dr. A. Patel' },
+    { id: 1, title: 'Complete Blood Count (CBC)', date: 'Oct 24, 2023', type: 'Lab Result', format: 'PDF', status: 'Normal', doctor: 'Dr. Kavya' },
+    { id: 2, title: 'Chest X-Ray Anteroposterior', date: 'Sep 12, 2023', type: 'Imaging', format: 'DICOM', status: 'Attention', doctor: 'Dr. Harsh' },
+    { id: 3, title: 'Annual Physical Summary', date: 'Jan 15, 2023', type: 'General', format: 'PDF', status: 'Normal', doctor: 'Dr. Anadhya' },
+    { id: 4, title: 'Lipid Panel', date: 'Dec 05, 2022', type: 'Lab Result', format: 'PDF', status: 'High', doctor: 'Dr. Kavya' },
+    { id: 5, title: 'Dermatology Consultation', date: 'Nov 18, 2022', type: 'Consultation', format: 'PDF', status: 'Normal', doctor: 'Dr. Harsh' },
   ];
 
   const filteredDocs = documents.filter(doc => {
