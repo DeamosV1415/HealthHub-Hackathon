@@ -1,7 +1,6 @@
 import { GoogleGenAI } from "@google/genai";
 
-const apiKey = process.env.API_KEY || '';
-const ai = new GoogleGenAI({ apiKey });
+const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 
 export const generateTriageResponse = async (
   history: {role: string, parts: {text: string}[]}[], 
@@ -9,8 +8,6 @@ export const generateTriageResponse = async (
   image?: { base64: string, mimeType: string }
 ) => {
   try {
-    const model = ai.models;
-    
     // Construct the user message parts. If an image is provided, include it.
     const userParts: any[] = [{ text: message }];
     if (image) {
@@ -22,16 +19,7 @@ export const generateTriageResponse = async (
       });
     }
 
-    // We construct a chat history for context
-    const chatContents = [
-      {
-        role: 'user',
-        parts: [{ text: "System Instruction: You are a helpful, empathetic, and professional medical triage AI assistant named HealthHub AI. Your goal is to gather symptoms from the user and suggest potential causes or recommend seeing a doctor. If an image is provided (e.g., of a rash, wound, or visible symptom), analyze the visual characteristics carefully to inform your advice, but NEVER give definitive medical diagnoses. Always advise consulting a professional for serious issues. Keep responses concise and easy to read." }]
-      },
-      {
-         role: 'model',
-         parts: [{ text: "Understood. I am ready to assist with medical triage inquiries." }]
-      },
+    const contents = [
       ...history.map(msg => ({
         role: msg.role,
         parts: msg.parts
@@ -42,9 +30,12 @@ export const generateTriageResponse = async (
       }
     ];
 
-    const response = await model.generateContent({
+    const response = await ai.models.generateContent({
       model: 'gemini-2.5-flash',
-      contents: chatContents,
+      contents: contents,
+      config: {
+        systemInstruction: "You are a helpful, empathetic, and professional medical triage AI assistant named HealthHub AI. Your goal is to gather symptoms from the user and suggest potential causes or recommend seeing a doctor. If an image is provided (e.g., of a rash, wound, or visible symptom), analyze the visual characteristics carefully to inform your advice, but NEVER give definitive medical diagnoses. Always advise consulting a professional for serious issues. Keep responses concise and easy to read.",
+      }
     });
     
     return response.text;
@@ -56,8 +47,7 @@ export const generateTriageResponse = async (
 
 export const generateReportAnalysis = async (base64Image: string, mimeType: string) => {
   try {
-    const model = ai.models;
-    const response = await model.generateContent({
+    const response = await ai.models.generateContent({
       model: 'gemini-2.5-flash',
       contents: {
         parts: [
@@ -82,16 +72,7 @@ export const generateReportAnalysis = async (base64Image: string, mimeType: stri
 
 export const generateGeneralChatResponse = async (history: {role: string, parts: {text: string}[]}[], message: string) => {
    try {
-    const model = ai.models;
-    const chatContents = [
-      {
-        role: 'user',
-        parts: [{ text: "System Instruction: You are a general health assistant for the HealthHub portal. Answer general health questions, explain medical terms, and provide wellness tips. Keep it friendly and concise." }]
-      },
-       {
-         role: 'model',
-         parts: [{ text: "I am ready to help with general health questions." }]
-      },
+    const contents = [
       ...history.map(msg => ({
         role: msg.role,
         parts: msg.parts
@@ -102,9 +83,12 @@ export const generateGeneralChatResponse = async (history: {role: string, parts:
       }
     ];
 
-    const response = await model.generateContent({
+    const response = await ai.models.generateContent({
       model: 'gemini-2.5-flash',
-      contents: chatContents,
+      contents: contents,
+      config: {
+        systemInstruction: "You are a general health assistant for the HealthHub portal. Answer general health questions, explain medical terms, and provide wellness tips. Keep it friendly and concise.",
+      }
     });
     
     return response.text;
